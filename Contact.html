@@ -1,0 +1,77 @@
+
+<html>
+
+<h1>Questions & Queries</h1>
+<form action="success.html" method="post" onsubmit="return ValidateForm(this);">
+<link rel="stylesheet" href="contact.css" type="text/css" />
+<script type="text/javascript">
+
+function ValidateForm(frm)
+   {
+      if (frm.Name.value == "")
+         {
+             alert('Name is required.');
+
+                 frm.Name.focus();
+                  return false;
+   }
+
+if (frm.FromEmailAddress.value == "")
+{
+  alert('Email address is required.');
+      frm.FromEmailAddress.focus();
+           return false; }
+
+if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1)
+  {
+   alert('Please enter a valid email address.');
+   frm.FromEmailAddress.focus();
+   return false;
+  }
+if (frm.Comments.value == "")
+ {
+ alert('Please enter questions.');
+    frm.Comments.focus(); return false;
+ }
+return true;
+
+}
+</script>
+
+<table style="width:550px;border:0;" cellpadding="8" cellspacing="0">
+  <img src="question_marks.jpg">
+  <div class='contact page'>
+<div class="row">
+  <div class="col-sm-8">
+<tr>
+    <td>
+         <label for="Name">Name*:</label>
+    </td>
+<td>
+<input name="Name" type="text" maxlength="60" style="width:250px;" />
+</td>
+   </tr> <tr>
+<td>
+<label for="PhoneNumber">Phone number:</label>
+</td>
+    <td>
+     <input name="PhoneNumber" type="text" maxlength="43" style="width:250px;" />
+</td>
+</tr> <tr>
+<td>
+<label for="FromEmailAddress">Email address*:</label>
+</td>
+   <td>
+      <input name="FromEmailAddress" type="text" maxlength="90" style="width:250px;" />
+   </td>
+    </tr> <tr>
+<td>
+    <label for="Questions">Questions:</label>
+</td> <td>
+<textarea name="Questions" rows="7" cols="40" style="width:350px;"></textarea>
+</td> </tr>
+
+</td> </tr>
+</table>
+</form>
+</html>
